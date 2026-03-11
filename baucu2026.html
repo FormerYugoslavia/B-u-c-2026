@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>E-Magazine: Hướng về Ngày Hội Lớn 15/03/2026 | Học viện Cán bộ TP.HCM</title>
+    <meta name="description" content="Sức trẻ Học viện Cán bộ TP.HCM hướng về Ngày hội lớn của toàn dân. Hướng dẫn các bước đi bầu cử đại biểu Quốc hội khóa XVI và đại biểu HĐND các cấp.">
+    <meta name="keywords" content="bầu cử 2026, học viện cán bộ, HCA, bầu cử quốc hội, ngày hội non sông, sinh viên HCA">
+    <meta name="author" content="Nhóm 5 - Mã Đáo Khai Xuân">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="E-Magazine: Sức trẻ HCA hướng về Ngày Hội Lớn">
+    <meta property="og:description" content="Mỗi lá phiếu - Một khát vọng vươn mình. Cùng tìm hiểu 4 nguyên tắc vàng và 5 bước đi bầu chuẩn luật dành cho sinh viên Học viện Cán bộ TP.HCM.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/67/Ngoc_Lu_drum_tympanum.svg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#A50000', // Đỏ đô
+                        gold: '#FFD700',    // Vàng gold
+                        primaryDark: '#7A0000',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(255, 215, 0, 0.6), inset 0 0 10px rgba(255, 215, 0, 0.2)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS tuỳ chỉnh cho hiệu ứng */
+        body { font-family: 'Inter', sans-serif; background-color: #FAFAFA; overflow-x: hidden; }
+        h1, h2, h3, h4, h5, .font-playfair { font-family: 'Playfair Display', serif; }
+        
+        /* Box trích dẫn Bác Hồ lấp lánh */
+        .sparkle-box {
+            position: relative;
+            background: linear-gradient(to right bottom, #ffffff, #fffdf2);
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+        .sparkle-box:hover {
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), inset 0 0 15px rgba(255, 215, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        .sparkle-box::before, .sparkle-box::after {
+            content: '✨';
+            position: absolute;
+            font-size: 1.5rem;
+            animation: twinkle 2s infinite alternate;
+        }
+        .sparkle-box::before { top: -15px; left: -10px; }
+        .sparkle-box::after { bottom: -15px; right: -10px; animation-delay: 1s; }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Hiệu ứng lá phiếu rơi (Hero Section) */
+        .ballot-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .ballot {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-top: 5px solid #A50000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            top: -100px;
+            animation: falling 4s linear infinite;
+        }
+        .ballot::before {
+            content: '';
+            position: absolute;
+            top: 10px; left: 5px; right: 5px; height: 2px; background: #eee;
+            box-shadow: 0 6px 0 #eee, 0 12px 0 #eee, 0 18px 0 #eee;
+        }
+        .ballot-box-icon {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 8rem;
+            color: #A50000;
+            z-index: 15;
+            opacity: 0.2;
+        }
+
+        @keyframes falling {
+            0% { transform: translateY(-50px) rotate(0deg) scale(0.8); opacity: 0; }
+            10% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(600px) rotate(20deg) scale(0.5); opacity: 0; }
+        }
+
+        /* Vị trí ngẫu nhiên cho các lá phiếu */
+        .b-1 { left: 20%; animation-duration: 4.5s; animation-delay: 0.5s; }
+        .b-2 { left: 50%; animation-duration: 3.8s; animation-delay: 0s; }
+        .b-3 { left: 80%; animation-duration: 5s; animation-delay: 1.2s; }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #A50000; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7A0000; }
+        
+        /* Modal ẩn hiện */
+        .modal-active { display: flex !important; animation: fadeIn 0.3s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes popUp { from { transform: scale(0.8); } to { transform: scale(1); } }
+        .modal-content-anim { animation: popUp 0.3s ease-out; }
+
+        /* Active Tab Styling */
+        .tab-btn.active {
+            background-color: #A50000;
+            color: #FFD700;
+            border-color: #A50000;
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px -1px rgba(165, 0, 0, 0.3);
+        }
+        .tab-content { display: none; animation: fadeIn 0.4s ease-in-out;}
+        .tab-content.active { display: block; }
+
+        /* E-Magazine Dropcap */
+        .dropcap::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: #A50000;
+            float: left;
+            line-height: 1;
+            padding-right: 0.5rem;
+            margin-top: -0.2rem;
+        }
+
+        /* Hiệu ứng xoay cực kỳ chậm cho trống đồng */
+        @keyframes spin-very-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-very-slow {
+            animation: spin-very-slow 160s linear infinite;
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased pt-20">
+
+    <header class="fixed top-0 left-0 w-full bg-primary shadow-md z-50 border-b-4 border-gold h-20 flex items-center">
+        <div class="container mx-auto px-4 flex justify-between items-center h-full">
+            <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-gold shadow-sm overflow-hidden p-[2px] shrink-0">
+                        <img src="Logo-Hoc-vien-Can-bo-Thanh-pho-Ho-Chi-Minh-1.webp" alt="Logo Học viện Cán bộ TP.HCM" class="w-full h-full object-contain">
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center border-2 border-gold shadow-sm shrink-0">
+                        <i class="ph-fill ph-horse text-primary text-xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-playfair text-gold text-lg md:text-xl font-bold leading-tight">MÃ ĐÁO KHAI XUÂN</h1>
+                    <p class="text-white text-[10px] md:text-xs uppercase tracking-wider opacity-90">Học viện Cán bộ TP.HCM</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 md:gap-4">
+                <div class="hidden md:block text-right mr-2 text-white">
+                    <p class="text-xs uppercase opacity-80 mb-0.5">Ngày hội non sông</p>
+                    <p class="font-bold text-sm text-gold">15/03/2026</p>
+                </div>
+                <div class="flex gap-2 text-center text-primary">
+                    <div class="bg-white/90 rounded px-2 md:px-3 py-1 min-w-[40px] md:min-w-[50px] shadow-sm">
+                        <span id="days" class="font-bold text-lg md:text-xl font-playfair block leading-none">00</span>
+                        <span class="text-[9px] uppercase font-bold">Ngày</span>
+                    </div>
+                    <div class="bg-white/90 rounded px-2 md:px-3 py-1 min-w-[40px] md:min-w-[50px] shadow-sm">
+                        <span id="hours" class="font-bold text-lg md:text-xl font-playfair block leading-none">00</span>
+                        <span class="text-[9px] uppercase font-bold">Giờ</span>
+                    </div>
+                    <div class="bg-white/90 rounded px-2 md:px-3 py-1 min-w-[40px] md:min-w-[50px] shadow-sm">
+                        <span id="minutes" class="font-bold text-lg md:text-xl font-playfair block leading-none">00</span>
+                        <span class="text-[9px] uppercase font-bold">Phút</span>
+                    </div>
+                    <div class="bg-white/90 rounded px-2 md:px-3 py-1 min-w-[40px] md:min-w-[50px] shadow-sm hidden sm:block">
+                        <span id="seconds" class="font-bold text-lg md:text-xl font-playfair block leading-none">00</span>
+                        <span class="text-[9px] uppercase font-bold">Giây</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative bg-white py-16 md:py-24 overflow-hidden border-b border-gray-200">
+        
+        <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+            <img src="Trống đồng.jpg" alt="Họa tiết Trống đồng" class="w-[150%] md:w-[900px] h-auto object-contain opacity-[0.3] animate-spin-very-slow select-none mix-blend-multiply">
+        </div>
+
+        <div class="ballot-container z-10">
+            <div class="ballot b-1"></div>
+            <div class="ballot b-2"></div>
+            <div class="ballot b-3"></div>
+            <i class="ph-fill ph-archive-box ballot-box-icon"></i>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-20 text-center max-w-5xl">
+            <span class="inline-block py-1 px-4 border border-primary text-primary text-sm font-bold uppercase tracking-widest rounded-full mb-6 bg-white/80 backdrop-blur-sm shadow-sm">
+                Bầu cử Quốc hội khóa XVI và HĐND các cấp
+            </span>
+            
+            <h1 class="text-2xl md:text-4xl lg:text-5xl font-playfair font-black text-primary mb-8 leading-tight uppercase relative inline-block">
+                Sức trẻ Học viện Cán bộ TP.HCM
+                <span class="block text-lg md:text-2xl lg:text-3xl mt-3 font-bold opacity-90">
+                    hướng về Ngày hội lớn của toàn dân
+                </span>
+            </h1>
+            
+            <div class="relative max-w-4xl mx-auto mb-8 p-6 md:p-10 rounded-3xl shadow-xl border border-gold/40 bg-white/95 backdrop-blur-sm overflow-hidden">
+                <p class="text-lg md:text-xl text-yellow-600 font-playfair font-bold mb-4 uppercase tracking-wide drop-shadow-sm">
+                    Mỗi lá phiếu - Một khát vọng vươn mình
+                </p>
+                <p class="text-lg md:text-xl text-gray-700 font-medium leading-relaxed text-justify md:text-center">
+                    Ngày 15 tháng 3 năm 2026, cùng với cử tri cả nước, chúng ta sẽ tham gia bầu cử đại biểu Quốc hội khóa XVI và đại biểu Hội đồng nhân dân các cấp nhiệm kỳ 2026 - 2031. Đây là sự kiện chính trị quan trọng của đất nước, nhằm lựa chọn những đại biểu tiêu biểu đại diện cho ý chí và nguyện vọng của Nhân dân.
+                </p>
+            </div>
+            
+            <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+            <p class="text-md md:text-lg text-gray-600 max-w-3xl mx-auto italic font-medium bg-white/60 p-2 rounded-lg backdrop-blur-sm inline-block">
+                Đối với mỗi sinh viên, đặc biệt là sinh viên Học viện Cán bộ chúng mình, việc tham gia bầu cử không chỉ là quyền lợi mà còn là trách nhiệm của mỗi công dân.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl text-lg leading-relaxed text-gray-800 text-justify">
+            <h2 class="text-3xl font-playfair font-bold text-primary mb-8 border-l-4 border-gold pl-4">1. Ý nghĩa của việc đi bầu cử đối với mỗi chúng ta</h2>
+            
+            <p class="dropcap mb-6">
+                Có thể nhiều bạn nghĩ rằng: Một lá phiếu của mình có thật sự quan trọng không? Câu trả lời là có và rất quan trọng. Bầu cử là cách để mỗi công dân trực tiếp tham gia vào quá trình xây dựng bộ máy nhà nước. Thông qua lá phiếu của mình, chúng ta lựa chọn những người đại diện xứng đáng vào Quốc hội và Hội đồng nhân dân các cấp. Đây đều là những cơ quan quyền lực nhà nước đại diện cho Nhân dân.
+            </p>
+            
+            <div class="bg-gray-50 border border-gray-200 p-6 md:p-8 rounded-xl my-8 relative">
+                <i class="ph-fill ph-clock-counter-clockwise text-4xl text-gray-300 absolute top-4 right-4"></i>
+                <p class="mb-0 text-gray-700 italic">
+                    Cách đây 80 năm, ngày <strong class="text-primary">06/01/1946</strong> với tinh thần yêu nước nồng nàn và hào khí của Cách mạng tháng 8, công dân Việt Nam trên mọi miền đất nước không phân biệt dân tộc, tôn giáo, giàu nghèo, nam nữ, đảng phái… từ 18 tuổi trở lên đã nô nức tham gia cuộc bầu cử Quốc hội bất chấp sự chống phá của các thế lực xâm lược và thù địch. Cuộc tổng tuyển cử đã giành thắng lợi trên phạm vi cả nước, hiện thực hóa quyền làm chủ của Nhân dân, đồng thời xác lập cơ sở chính trị - pháp lý vững chắc cho sự ra đời của nước Việt Nam Dân chủ Cộng hoà. Trải qua các thời kỳ, Quốc hội Việt Nam luôn luôn là hiện thân của khối đại đoàn kết toàn dân tộc; gắn bó chặt chẽ và có trách nhiệm với cử tri, luôn luôn đại diện cho ý chí và nguyện vọng của Nhân dân.
+                </p>
+            </div>
+
+            <!-- Bổ sung hình ảnh Hội nghị tiếp xúc cử tri -->
+            <figure class="my-10">
+                <img src="Phường Tân Thành.jpg" alt="Hội nghị tiếp xúc cử tri phường Tân Thành" class="w-full rounded-xl shadow-md border border-gray-200 object-cover hover:shadow-lg transition-shadow duration-300">
+                <figcaption class="mt-3 text-sm italic text-gray-500 font-medium text-center">Phường Tân Thành - TP.HCM tổ chức Hội nghị tiếp xúc cử tri với người ứng cử</figcaption>
+            </figure>
+
+            <p class="mb-6 font-bold text-xl text-center text-primary font-playfair">
+                "Mỗi lá phiếu là một tiếng nói. Mỗi lựa chọn là một sự gửi gắm niềm tin."
+            </p>
+
+            <p class="mb-6">
+                Khi chúng ta đi bầu cử, chúng ta đang góp phần xây dựng một Nhà nước của Nhân dân, do Nhân dân và vì Nhân dân; đồng thời thể hiện tinh thần trách nhiệm của thế hệ trẻ đối với tương lai của đất nước.
+            </p>
+
+            <!-- Bổ sung 2 hình ảnh Thanh niên đặt cạnh nhau -->
+            <figure class="my-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    <img src="Thanh niên ra quân.jpg" alt="Thanh niên ra quân hỗ trợ bầu cử" class="w-full h-64 md:h-72 object-cover rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                    <img src="Thanh niên đồng hành.jpg" alt="Thanh niên đồng hành cùng cử tri" class="w-full h-64 md:h-72 object-cover rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                </div>
+                <figcaption class="mt-4 text-sm italic text-gray-500 font-medium text-center">Thanh niên đồng hành cùng cử tri trong ngày hội toàn dân</figcaption>
+            </figure>
+
+            <p>
+                Đối với sinh viên chúng ta, việc tham gia bầu cử còn là dịp để chúng ta thực hành quyền công dân, nâng cao ý thức chính trị và trách nhiệm xã hội của mình.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-primary text-white relative">
+        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'#ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="container mx-auto px-4 max-w-4xl relative z-10">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-5xl font-playfair font-bold text-gold mb-4">2. Hướng dẫn các bước đi bầu cử</h2>
+                <p class="text-primary-100">Để tham gia bầu cử đúng quy định, các bạn cần lưu ý một số bước cơ bản. Nhấn vào từng bước để xem chi tiết.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button class="tab-btn active bg-white text-primary border-2 border-transparent px-5 py-3 rounded-full font-bold transition-all shadow-md hover:scale-105 flex items-center gap-2" data-target="step-1">
+                    <span class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-sm">1</span> Kiểm tra
+                </button>
+                <button class="tab-btn bg-primaryDark text-white border-2 border-white/20 px-5 py-3 rounded-full font-bold transition-all hover:bg-white hover:text-primary hover:scale-105 flex items-center gap-2" data-target="step-2">
+                    <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-sm">2</span> Di chuyển
+                </button>
+                <button class="tab-btn bg-primaryDark text-white border-2 border-white/20 px-5 py-3 rounded-full font-bold transition-all hover:bg-white hover:text-primary hover:scale-105 flex items-center gap-2" data-target="step-3">
+                    <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-sm">3</span> Nhận phiếu
+                </button>
+                <button class="tab-btn bg-primaryDark text-white border-2 border-white/20 px-5 py-3 rounded-full font-bold transition-all hover:bg-white hover:text-primary hover:scale-105 flex items-center gap-2" data-target="step-4">
+                    <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-sm">4</span> Ghi phiếu
+                </button>
+                <button class="tab-btn bg-primaryDark text-white border-2 border-white/20 px-5 py-3 rounded-full font-bold transition-all hover:bg-white hover:text-primary hover:scale-105 flex items-center gap-2" data-target="step-5">
+                    <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-sm">5</span> Bỏ phiếu
+                </button>
+            </div>
+
+            <div class="bg-white text-gray-800 rounded-2xl p-6 md:p-10 shadow-xl border-t-8 border-gold min-h-[300px] flex items-center">
+                
+                <div id="step-1" class="tab-content active w-full">
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <div class="w-24 h-24 shrink-0 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-4xl">
+                            <i class="ph-fill ph-magnifying-glass"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-playfair font-bold text-primary mb-3">Bước 1: Kiểm tra thông tin cử tri</h3>
+                            <p class="text-lg leading-relaxed text-gray-600">Trước ngày bầu cử, hãy kiểm tra danh sách cử tri tại nơi cư trú hoặc nơi đăng ký tạm trú.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step-2" class="tab-content w-full">
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <div class="w-24 h-24 shrink-0 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-4xl">
+                            <i class="ph-fill ph-map-pin"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-playfair font-bold text-primary mb-3">Bước 2: Đến khu vực bỏ phiếu</h3>
+                            <p class="text-lg leading-relaxed text-gray-600">Vào <strong class="text-primary">ngày Chủ nhật 15/3/2026</strong>, các bạn mang theo giấy tờ cần thiết (thẻ cử tri/CCCD) và đến đúng khu vực bỏ phiếu được thông báo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step-3" class="tab-content w-full">
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <div class="w-24 h-24 shrink-0 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl">
+                            <i class="ph-fill ph-file-text"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-playfair font-bold text-primary mb-3">Bước 3: Nhận phiếu và nghiên cứu</h3>
+                            <p class="text-lg leading-relaxed text-gray-600">Tại phòng bỏ phiếu, các bạn sẽ nhận phiếu bầu và xem danh sách ứng cử viên để lựa chọn những người mà mình tin tưởng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step-4" class="tab-content w-full">
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <div class="w-24 h-24 shrink-0 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-4xl">
+                            <i class="ph-fill ph-pen-nib"></i>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="text-2xl font-playfair font-bold text-primary mb-3">Bước 4: Ghi phiếu bầu đúng hướng dẫn</h3>
+                            <p class="text-gray-700 mb-3 font-medium">Các bạn không tín nhiệm ứng cử viên nào thì gạch ngang giữa cả dòng chữ họ và tên người đó. Chúng mình lưu ý một số quy định sau:</p>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1 text-md">
+                                <li>Khi các bạn viết phiếu bầu thì không ai được phép xem.</li>
+                                <li>Không được khoanh tròn, gạch chéo, gạch dưới, gạch trên hàng họ và tên ứng cử viên.</li>
+                                <li>Không được đánh dấu những ký tự đặc biệt trên phiếu bầu.</li>
+                                <li>Không được viết thêm, ghi tên người ngoài danh sách ứng cử vào phiếu bầu.</li>
+                                <li>Không được bầu quá số đại biểu được ấn định trong phiếu bầu, hoặc bỏ phiếu bầu trắng.</li>
+                                <li>Nếu viết sai, các bạn có quyền được đổi phiếu bầu khác.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step-5" class="tab-content w-full">
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <div class="w-24 h-24 shrink-0 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-4xl">
+                            <i class="ph-fill ph-archive-box"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-playfair font-bold text-primary mb-3">Bước 5: Bỏ phiếu kín</h3>
+                            <p class="text-lg leading-relaxed text-gray-600 mb-2">Sau khi lựa chọn, các bạn gấp phiếu và bỏ vào hòm phiếu theo nguyên tắc bỏ phiếu kín nhằm đảm bảo tính dân chủ và minh bạch.</p>
+                            <p class="text-lg leading-relaxed text-gray-600">Cuối cùng, các bạn tiến đến bàn của Tổ bầu cử để đóng dấu “Đã bỏ phiếu” vào thẻ cử tri. Như vậy là chúng mình đã hoàn thành xong việc bỏ phiếu của mình.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <p class="text-center mt-8 text-white/90 italic font-medium">
+                Các bước này rất đơn giản nhưng lại mang ý nghĩa rất lớn. Mỗi lá phiếu của chúng ta đều là một quyết định của công dân đối với tương lai của đất nước.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-playfair font-bold text-primary mb-6 text-center">3. Trách nhiệm của sinh viên Học viện chúng ta</h2>
+            <p class="text-center text-lg text-gray-700 mb-10 max-w-3xl mx-auto">
+                Sinh viên Học viện Cán bộ Thành phố Hồ Chí Minh không chỉ là những cử tri bình thường. Chúng ta là lực lượng trí thức trẻ đang được đào tạo để tham gia vào hệ thống chính trị trong tương lai. Chính vì vậy, mỗi sinh viên Học viện cần:
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="ph-fill ph-book-open"></i>
+                    </div>
+                    <p class="font-semibold text-gray-800">Chủ động tìm hiểu thông tin về bầu cử, về các ứng cử viên và chương trình hành động của họ.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center">
+                    <div class="w-16 h-16 bg-red-50 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="ph-fill ph-check-circle"></i>
+                    </div>
+                    <p class="font-semibold text-gray-800">Tham gia bầu cử đầy đủ, đúng quy định của pháp luật.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-center">
+                    <div class="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="ph-fill ph-share-network"></i>
+                    </div>
+                    <p class="font-semibold text-gray-800">Lan tỏa tinh thần trách nhiệm công dân tới gia đình, bạn bè và cộng đồng.</p>
+                </div>
+            </div>
+
+            <div class="bg-primary/5 p-6 rounded-2xl border border-primary/10 text-gray-800 text-justify leading-relaxed">
+                <p class="mb-3">
+                    Trong thời đại mạng xã hội hiện nay, mỗi sinh viên chúng ta cũng có thể trở thành một tuyên truyền viên tích cực: chia sẻ thông tin chính thống, lan tỏa thông điệp tích cực về ngày bầu cử, góp phần tạo nên bầu không khí dân chủ và trách nhiệm trong xã hội.
+                </p>
+                <p class="font-medium text-primary">
+                    Chúng ta có thể bắt đầu từ những hành động rất đơn giản: chia sẻ bài viết từ các trang chính thống, tham gia các hoạt động truyền thông của Đoàn - Hội Học viện, hoặc đơn giản là nhắc bạn bè cùng đi bầu cử đúng ngày, đúng giờ.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: THÔNG ĐIỆP (Đã thêm ảnh nền HCA.jpg) -->
+    <section class="py-20 relative border-t border-gray-200">
+        <!-- Background Image & Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="HCA.jpg" alt="Học viện Cán bộ TP.HCM" class="w-full h-full object-cover object-center fixed-bg">
+            <div class="absolute inset-0 bg-white/85 backdrop-blur-[2px]"></div> <!-- Lớp phủ làm mờ ảnh để nổi chữ -->
+        </div>
+
+        <div class="container mx-auto px-4 max-w-3xl relative z-10">
+            <h2 class="text-3xl font-playfair font-bold text-primary mb-8 border-l-4 border-gold pl-4 drop-shadow-sm">4. Thông điệp gửi tới các bạn</h2>
+            
+            <div class="text-lg leading-relaxed text-gray-900 text-justify space-y-4 mb-8">
+                <p class="font-medium">Các bạn thân mến,</p>
+                <p class="font-medium">Ngày bầu cử không chỉ là một sự kiện chính trị trọng đại. Đó còn là Ngày hội lớn của toàn dân, khi mỗi công dân Việt Nam thể hiện quyền làm chủ của mình đối với Nhà nước và xã hội.</p>
+                
+                <div class="sparkle-box rounded-2xl p-8 my-8 text-center relative max-w-2xl mx-auto bg-white/95 shadow-xl">
+                    <i class="ph-fill ph-quotes text-3xl text-gold/40 absolute top-4 left-4"></i>
+                    <h3 class="text-xl md:text-2xl font-playfair text-primary font-bold mb-3 italic relative z-10 leading-snug">
+                        “Lá phiếu của người cử tri tuy khuôn khổ nó bé nhỏ, nhưng giá trị của nó thì vô cùng to lớn”
+                    </h3>
+                    <p class="text-gray-500 font-bold uppercase tracking-widest text-xs relative z-10">- Chủ tịch Hồ Chí Minh -</p>
+                    <i class="ph-fill ph-quotes text-3xl text-gold/40 absolute bottom-4 right-4 transform rotate-180"></i>
+                </div>
+
+                <p class="font-medium">Là sinh viên Học viện Cán bộ, chúng ta càng cần thể hiện tinh thần trách nhiệm, bản lĩnh và ý thức công dân của thế hệ trẻ.</p>
+                <p class="font-bold text-xl text-primary text-center my-6 drop-shadow-sm">Vì vậy, chúng ta hãy nhớ:</p>
+                
+                <div class="bg-red-50/90 backdrop-blur-md p-6 rounded-xl border border-red-200 text-center shadow-lg">
+                    <p class="text-xl font-playfair font-bold text-gray-800 mb-2">Chủ nhật ngày 15/3, ta cùng nhau đi bầu.</p>
+                    <p class="text-sm text-gray-700 mb-6 font-medium">Không chỉ thực hiện quyền công dân, mà còn góp phần xây dựng tương lai đất nước.</p>
+                    
+                    <h3 class="text-2xl font-black text-primary uppercase mb-1 drop-shadow-sm">Mỗi lá phiếu - Một trách nhiệm!</h3>
+                    <h3 class="text-2xl font-black text-primary uppercase mb-6 drop-shadow-sm">Mỗi lựa chọn - Một tương lai!</h3>
+                    
+                    <div class="inline-block bg-white px-6 py-3 rounded-full border-2 border-gold shadow-md hover:scale-105 transition-transform">
+                        <p class="font-bold text-gray-800">
+                            Sinh viên Học viện: <span class="text-primary">TIÊN PHONG - TRÁCH NHIỆM - GƯƠNG MẪU!</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM CAM KẾT -->
+    <section class="py-16 bg-gray-100 border-t border-gray-200 relative z-20">
+        <div class="container mx-auto px-4 max-w-xl">
+            <div class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border-t-8 border-primary">
+                <h3 class="text-3xl font-playfair font-bold text-primary mb-2 text-center">LỜI HỨA CỦA CỬ TRI TRẺ</h3>
+                <p class="text-sm text-gray-600 mb-8 text-center">Ghi tên để khẳng định sự sẵn sàng của bạn trong Ngày hội lớn.</p>
+                
+                <form id="pledgeForm" class="space-y-5">
+                    <div>
+                        <label for="voterName" class="block text-sm font-bold text-gray-700 mb-2">Họ và tên của bạn:</label>
+                        <input type="text" id="voterName" required placeholder="Nhập họ và tên..." 
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none font-medium">
+                    </div>
+                    <button type="submit" 
+                        class="w-full bg-primary hover:bg-primaryDark text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                        <i class="ph-bold ph-check-circle text-xl text-gold"></i>
+                        TÔI CAM KẾT THAM GIA BẦU CỬ
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primaryDark text-white pt-12 pb-6 text-center border-t-4 border-gold">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center justify-center mb-6">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden p-[2px] shadow-sm">
+                         <img src="Logo-Hoc-vien-Can-bo-Thanh-pho-Ho-Chi-Minh-1.webp" alt="Logo Học viện Cán bộ TP.HCM" class="w-full h-full object-contain">
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+                        <i class="ph-fill ph-horse text-primary text-2xl"></i>
+                    </div>
+                </div>
+                <h4 class="font-playfair text-xl text-gold font-bold mb-1">NHÓM 5 - MÃ ĐÁO KHAI XUÂN</h4>
+                <p class="text-sm text-gray-300">Học viện Cán bộ Thành phố Hồ Chí Minh (HCA)</p>
+            </div>
+            <p class="text-xs text-gray-400 max-w-2xl mx-auto uppercase tracking-wider">
+                Mỗi lựa chọn là một sự gửi gắm niềm tin - Mỗi lá phiếu là một trách nhiệm. <br>
+                Hãy cùng nhau xây dựng tương lai đất nước vào ngày 15/03/2026.
+            </p>
+        </div>
+    </footer>
+
+    <div id="pledgeModal" class="fixed inset-0 bg-black/70 z-[100] hidden items-center justify-center backdrop-blur-sm p-4">
+        <div class="bg-white rounded-2xl w-full max-w-md overflow-hidden shadow-2xl modal-content-anim relative border-4 border-gold">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-primary transition-colors">
+                <i class="ph-bold ph-x text-2xl"></i>
+            </button>
+            
+            <div class="bg-primary py-8 text-center text-white relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+                <i class="ph-fill ph-seal-check text-6xl text-gold mb-2 relative z-10 drop-shadow-lg"></i>
+                <h3 class="font-playfair text-2xl font-bold text-gold relative z-10">CẢM ƠN BẠN!</h3>
+            </div>
+            
+            <div class="p-8 text-center bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlPSIjZjVmNWY1IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')]">
+                <p class="text-gray-600 mb-4 font-medium">Bạn <span id="displayVoterName" class="text-primary font-bold text-lg"></span> đã xác nhận.</p>
+                <div class="bg-red-50 text-primary p-4 rounded-xl border border-red-100 shadow-inner">
+                    <p class="font-playfair font-bold text-xl uppercase leading-tight">
+                        Sinh viên Học viện Cán bộ:<br>
+                        <span class="text-gold" style="-webkit-text-stroke: 0.5px #A50000;">TIÊN PHONG - TRÁCH NHIỆM - GƯƠNG MẪU!</span>
+                    </p>
+                </div>
+                <button id="btnConfirmClose" class="mt-6 w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-3 rounded-lg transition-colors">
+                    Đóng cửa sổ
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- XỬ LÝ ĐẾM NGƯỢC ---
+            const countDownDate = new Date("March 15, 2026 07:00:00").getTime();
+
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("days").innerHTML = "00";
+                    document.getElementById("hours").innerHTML = "00";
+                    document.getElementById("minutes").innerHTML = "00";
+                    document.getElementById("seconds").innerHTML = "00";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+            }, 1000);
+
+            // --- XỬ LÝ ACCORDION/TABS 5 BƯỚC ---
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-white', 'text-primary');
+                        b.classList.add('bg-primaryDark', 'text-white');
+                        const numBadge = b.querySelector('span');
+                        numBadge.classList.remove('bg-primary/10');
+                        numBadge.classList.add('bg-white/20');
+                    });
+
+                    btn.classList.add('active', 'bg-white', 'text-primary');
+                    btn.classList.remove('bg-primaryDark', 'text-white');
+                    const numBadge = btn.querySelector('span');
+                    numBadge.classList.add('bg-primary/10');
+                    numBadge.classList.remove('bg-white/20');
+
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+
+                    const targetId = btn.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // --- XỬ LÝ FORM & MODAL ---
+            const form = document.getElementById('pledgeForm');
+            const modal = document.getElementById('pledgeModal');
+            const btnClose = document.getElementById('closeModal');
+            const btnConfirmClose = document.getElementById('btnConfirmClose');
+            const displayName = document.getElementById('displayVoterName');
+            const inputName = document.getElementById('voterName');
+
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault(); 
+                    if(inputName.value.trim() !== '') {
+                        displayName.textContent = inputName.value;
+                        modal.classList.add('modal-active');
+                        inputName.value = ''; // Xóa nội dung form sau khi hoàn thành
+                    }
+                });
+            }
+
+            if (btnClose && modal) {
+                btnClose.addEventListener('click', () => modal.classList.remove('modal-active'));
+            }
+            
+            if (btnConfirmClose && modal) {
+                btnConfirmClose.addEventListener('click', () => modal.classList.remove('modal-active'));
+            }
+            
+            // Nhấn ra ngoài để đóng modal
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if(e.target === modal) modal.classList.remove('modal-active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
